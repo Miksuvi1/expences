@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import ExpenseItem from './ExpenseItem.js'
 
-function App() {
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -30,21 +31,21 @@ function App() {
       <ExpenseItem/>
     </div>
   );
-}
+}*/
 
 function App() {
-  const expenses = {
+  const expenses = [
     {
-  const date = new Date(2023, 9, 6)
-  const title = 'New book'
-  const price = 30.99
-    }
+  date: new Date(2023, 9, 6),
+  title: 'New book',
+  price: 30.99
+    },
     {
-      const date = new Date(2023, 9, 6)
-      const title = 'New jeans'
-      const price = 99.99
+      date: new Date(2023, 9, 6),
+      title: 'New jeans',
+      price: 99.99
         }
-}
+      ]
   return (
     <div className='App'>
       <ExpenseItem
