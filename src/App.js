@@ -32,4 +32,28 @@ function App() {
   );
 }
 
+function App() {
+  const expenses = {
+    {
+  const date = new Date(2023, 9, 6)
+  const title = 'New book'
+  const price = 30.99
+    }
+    {
+      const date = new Date(2023, 9, 6)
+      const title = 'New jeans'
+      const price = 99.99
+        }
+}
+  return (
+    <div className='App'>
+      <ExpenseItem
+     expenseData={expenses[0]}/>
+      <ExpenseItem
+     expenseData={expenses[1]}/>
+
+    </div>
+  );
+}
+
 export default App;
