@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ExpenseItem from './components/ExpenseItem.js'
+import Expenses from './components/Expenses.js';
 
 /*function App() {
   return (
@@ -48,11 +49,7 @@ function App() {
       ]
   return (
     <div className='App'>
-      <ExpenseItem
-     expenseData={expenses[0]}/>
-      <ExpenseItem
-     expenseData={expenses[1]}/>
-
+      <Expenses expenses={expenses}/>
     </div>
   );
 }
