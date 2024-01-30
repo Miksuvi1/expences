@@ -1,18 +1,21 @@
 import './ExpenseForm.css'
 const ExpenseForm = (props) => {
+    const titleChangeHandler = () => {
+        console.log('Title changed!')
+    }
     return(
         <form>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
-                    <label className="new-expense__control">Title</label>
+                    <label>Title</label>
                     <input type="text"/>
                 </div>
-                <div>
-                    <label className="new-expense__control">Amount</label>
+                <div className="new-expense__control">
+                    <label >Amount</label>
                     <input type="number" min="0.01" step="0.01"/>
                 </div>
-                <div>
-                    <label className="new-expense__control">date</label>
+                <div className="new-expense__control">
+                    <label>date</label>
                     <input type="date" min="2023-01-01" max="2025-01-31"/>
                 </div>
                 
