@@ -7,26 +7,9 @@ const ExpenseForm = (props) => {
         enteredDate: ''
     })
     console.log(userInput)
-    const titleChangeHandler = (event) => {
-        setUserInput({
-           ...userInput,
-           enteredTitle: event.target.value 
-        })
-    }
-        const amountChangeHandler = (event) => {
-            setUserInput({
-               ...userInput,
-               enteredAmount: event.target.value 
-            })
-        }
-        const dateChangeHandler = (event) => {
-            setUserInput({
-                ...userInput,
-                enteredDate: event.target.value
-            })
-        }
     
-    /*const [enteredTitle, setEnteredTitle] = useState('')
+    
+    const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
     const titleChangeHandler = (event) => {
@@ -39,7 +22,7 @@ const ExpenseForm = (props) => {
     }
     const dateChangeHandler = (event) => {
         setEnteredDate(event.target.value)
-    }*/
+    }
     
     return(
         <form>
@@ -64,6 +47,7 @@ const ExpenseForm = (props) => {
                 </div>
         </form>
     )
+}
 }
 
 export default ExpenseForm
