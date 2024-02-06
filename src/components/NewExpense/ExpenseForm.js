@@ -12,8 +12,8 @@ const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
     const [enteredDate, setEnteredDate] = useState('')
-    const titleChangeHandler = (event) => {
-    console.log(enteredTitle)
+    
+   
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value)
     }
@@ -34,11 +34,13 @@ const ExpenseForm = (props) => {
                 </div>
                 <div className="new-expense__control">
                     <label >Amount</label>
-                    <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler}/>
+                    <input type="number" min="0.01" step="0.01" 
+                    onChange={amountChangeHandler}/>
                 </div>
                 <div className="new-expense__control">
                     <label>date</label>
-                    <input type="date" min="2023-01-01" max="2025-01-31" onChange={dateChangeHandler}/>
+                    <input type="date" min="2023-01-01" max="2025-01-31" 
+                    onChange={dateChangeHandler}/>
                 </div>
                 
             </div>
@@ -48,6 +50,6 @@ const ExpenseForm = (props) => {
         </form>
     )
 }
-}
+
 
 export default ExpenseForm
