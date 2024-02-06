@@ -1,38 +1,8 @@
 import logo from './logo.svg';
+/*import ExpenseItem from './components/ExpenseItem.js'*/
 import './App.css';
-import ExpenseItem from './components/ExpenseItem.js'
-import Expenses from './components/Expenses.js';
-import NewExpense from './components/NewExpense/NewExpense.js';
-/*function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-import './App.css';
-import ExpenseItem from './components/ExpenseItem'
-
-function App() {
-  return (
-    <div className="App">
-      <ExpenseItem/>
-    </div>
-  );
-}*/
+import Expenses from './components/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
   const expenses = [
@@ -47,6 +17,11 @@ const App = () => {
       price: 99.99
         }
       ]
+      const addExpenseHandler = (expense) => {
+        console.log('In App.js')
+        console.log(expense)
+      }
+      
   return (
     <div className='App'>
       <NewExpense></NewExpense>
