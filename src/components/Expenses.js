@@ -5,6 +5,9 @@ import ExpensesFilter from './ExpensesFilter'
 const Expenses = (props) => {
     return (
         <Card className='expenses'>
+            <ExpensesFilter >
+            
+            </ExpensesFilter>
             <ExpenseItem expenseData={props.expenses[0]} />
             <ExpenseItem expenseData={props.expenses[1]} />
             

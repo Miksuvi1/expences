@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExpensesFitler.css';
+import './ExpensesFilter.css'
 const ExpensesFilter = () => {
     return (
         <div className='expenses-filter'>
