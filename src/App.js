@@ -1,11 +1,10 @@
 import logo from './logo.svg';
-/*import ExpenseItem from './components/ExpenseItem.js'*/
+import {useState} from 'react';
 import './App.css';
 import Expenses from './components/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
-const App = () => {
-  const DYMMY_EXPENSES = [
+const DYMMY_EXPENSES = [
     {
   id: 'id1',
   date: new Date(2023, 9, 6),
@@ -25,15 +24,19 @@ const App = () => {
           price: 139.99
         },
       ]
+const App = () => {
+  const [expenses, setExpenses] = useState(DYMMY_EXPENSES)
       const addExpenseHandler = (expense) => {
-        console.log('In App.js')
-        console.log(expense)
+        setExpenses((previousExpenses) => {
+          return [expense, ...previousExpenses]
+        })
+        setExpenses([expense, ...expenses])
       }
       
   return (
     <div className='App'>
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-      <Expenses expenses={DYMMY_EXPENSES}/>
+      <Expenses expenses={expenses}/>
     </div>
   );
 }
