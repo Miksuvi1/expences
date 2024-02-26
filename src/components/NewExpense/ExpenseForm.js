@@ -6,6 +6,7 @@ import Error from '../UI/Error'
 
 const ExpenseForm = (props) => {
     const [error, setError] = useState(null)
+    console.log(error)
     
     /*const [enteredTitle, setEnteredTitle] = useState('')
     const [enteredAmount, setEnteredAmount] = useState('')
@@ -14,6 +15,10 @@ const ExpenseForm = (props) => {
     const titleInputRef = useRef()
     const amountInputRef = useRef()
     const dateInputRef = useRef()
+
+    const errorHandler = () => {
+        setError(null)
+    }
     
    
  /*   const titleChangeHandler = (event) => {
@@ -47,7 +52,7 @@ const ExpenseForm = (props) => {
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            price: enteredAmount,
             date: new Date(enteredDate)
         }
         props.onSaveExpenseData(expenseData)
@@ -61,6 +66,16 @@ const ExpenseForm = (props) => {
     }
     
     return(
+        <Fragment>
+            {error && (
+                <Error 
+                title={error.title}
+                message={error.message}
+                onConfirm={errorHandler}
+                />
+            )}
+
+       <div>
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
@@ -92,7 +107,9 @@ const ExpenseForm = (props) => {
                     <button type="submit">Add Expense</button>
                 </div>
                 </div>
-        </form>
+        </form> 
+        </div>
+        </Fragment>
     )
 }
 
