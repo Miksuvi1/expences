@@ -1,21 +1,21 @@
+
 import React, {Fragment} from "react";
 import ReactDOM from "react-dom";
 
 import Card from "./Card";
-import Button from './Button';
+import Button from "./Button";
 
-import './Error.css'
+import "./Error.css"
 
 const BackDrop = () => {
     return (
-        <div className="backdrop"/>
-    
+        <div className="backdrop" />
     )
 }
 
 const ModalOverlay = (props) => {
     return (
-        <card className="modal">
+        <Card className="modal">
             <header className="header">
                 <h2>{props.title}</h2>
             </header>
@@ -23,25 +23,26 @@ const ModalOverlay = (props) => {
                 <p>{props.message}</p>
             </div>
             <footer className="footer">
-                <button onClick={props.onConfirm}>OK</button>
+                <Button onClick={props.onConfirm}>OK</Button>
             </footer>
-        </card>
+        </Card>
     )
 }
+
 const Error = (props) => {
     return (
         <Fragment>
-            {ReactDOM.createPortal (
+            {ReactDOM.createPortal(
                 <BackDrop onConfirm={props.onConfirm}/>,
                 document.getElementById('backdrop-root')
             )}
-            {ReactDOM.createPortal (
+            {ReactDOM.createPortal(
                 <ModalOverlay
-                title={props.title}
-                message={props.message}
-                onConfirm={props.onConfirm}
+                    title={props.title}
+                    message={props.message}
+                    onConfirm={props.onConfirm}
                 />,
-                document.getElementById('ovarlay-root')
+                document.getElementById('overlay-root')
             )
             }
         </Fragment>
