@@ -25,7 +25,7 @@ const DYMMY_EXPENSES = [
         },
       ]
 const App = () => {
-  const [expenses, setExpenses] = useState([] => {
+  const [expenses, setExpenses] = useState(() => {
     const expensesFromLS = JSON.parse(localStorage.getItem('expenses'));
     return expensesFromLS || [];
   })
